@@ -51,9 +51,9 @@ app.use(
 );
 
   
-app.get("/", (req, res) =>{
-    return res.send("Server is running");
-})
+app.get('/', (req, res) => {
+  res.render('homePage');
+});
 
 app.get("/register", (req, res) => {
     return res.render("registerPage");
