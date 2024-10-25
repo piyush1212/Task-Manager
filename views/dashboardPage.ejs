@@ -1,39 +1,143 @@
 <!DOCTYPE html>
-    <html>
-    <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Simple To-Do App</title>
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    </head>
-    <body>
-      <div class="container">
-        <h1 class="display-4 text-center py-1">To-Do App</h1>
-        
-        <div class="jumbotron p-3 shadow-sm">
-         
-            <div class="d-flex align-items-center">
-              <input id="create_field" name='todo' autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
-              <button class="add_item btn btn-primary">Add New Item</button>
-            </div>
-          
-        </div>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple To-Do App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        <ul id="item_list" class="list-group pb-5">
-        </ul>
-      
-      <button class="show_more">Show More</button>
-      <br/>
-      <br/>
-      <form action='/logout' method="POST">
-        <button> Logout <button>
-      </form>
+    h1 {
+      color: #343a40;
+      font-weight: bold;
+    }
 
+    .container {
+      max-width: 600px;
+      margin-top: 50px;
+    }
 
+    .jumbotron {
+      background-color: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #create_field {
+      border: 2px solid #ced4da;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    #create_field:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+    }
+
+    .add_item {
+      background-color: #007bff;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .add_item:hover {
+      background-color: #0056b3;
+    }
+
+    #item_list {
+      margin-top: 20px;
+    }
+
+    .list-group-item {
+      background-color: #fff;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    .list-group-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .show_more {
+      background-color: #28a745;
+      border-radius: 30px;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .show_more:hover {
+      background-color: #218838;
+    }
+
+    form button {
+      background-color: #dc3545;
+      border-radius: 30px;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      border: none;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    form button:hover {
+      background-color: #c82333;
+    }
+
+    /* Adjustments for smaller screens */
+    @media (max-width: 576px) {
+      .container {
+        margin-top: 30px;
+        padding: 15px;
+      }
+
+      .d-flex {
+        flex-direction: column;
+      }
+
+      .add_item {
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="display-4 text-center py-1">To-Do App</h1>
+    
+    <div class="jumbotron p-3 shadow-sm">
+      <div class="d-flex align-items-center">
+        <input id="create_field" name='todo' autofocus autocomplete="off" class="form-control mr-3" type="text" style="flex: 1;">
+        <button class="add_item btn btn-primary">Add New Item</button>
       </div>
-      <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
-      <script src="/browser.js"></script>
-    </body>
-    </html>
+    </div>
 
-   
+    <ul id="item_list" class="list-group pb-5">
+    </ul>
+    
+    <button class="show_more btn">Show More</button>
+    <br/>
+    <br/>
+    <form action='/logout' method="POST">
+      <button>Logout</button>
+    </form>
+  </div>
+  
+  <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+  <script src="/browser.js"></script>
+</body>
+</html>
