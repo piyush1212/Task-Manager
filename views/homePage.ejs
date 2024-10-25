@@ -6,43 +6,90 @@
     <title>Home Page</title>
     <style>
       body {
-            background-image: url('https://th.bing.com/th?id=OIP.OGDSchzJA1-FjGL5w0H6xwHaEm&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
-            background-repeat: no-repeat;
-            background-size: cover;
-            display: flex;
-            justify-content: space-around;
-            /* background-position: center; */
-          }
-      button{
+        background-image: url('https://th.bing.com/th?id=OIP.OGDSchzJA1-FjGL5w0H6xwHaEm&w=316&h=197&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      button {
         border: none;
-        border-radius: 20px;
-        font-weight: bolder;
-        padding: 25px;
-        width: 400px;
-        background-color: white;
+        border-radius: 30px;
+        font-weight: bold;
+        padding: 20px;
+        width: 300px;
+        background-color: rgba(255, 255, 255, 0.9);
         color: rgb(62, 61, 56);
         font-size: 20px;
-        margin-top: 50px;
+        margin-top: 20px;
         cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
       }
-      .container {   
-        padding: 55px;   
-        margin-bottom: 50px;  
-    } 
+
+      button:hover {
+        background-color: rgb(62, 61, 56);
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        padding: 50px;
+        margin-right: 20%;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      form {
+        margin: 10px 0;
+      }
+
+      @media (max-width: 768px) {
+        button {
+          width: 250px;
+          font-size: 18px;
+        }
+
+        .container {
+          padding: 30px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        button {
+          width: 200px;
+          font-size: 16px;
+        }
+
+        .container {
+          padding: 20px;
+        }
+      }
     </style>
 </head>
 <body>
      <form action='/register' method="GET">
       <div class="container">
-        <button> Register </button>
-        </div>
-      </form>
+        <button>Register</button>
+      </div>
+     </form>
 
-
-      <form action='/login' method="GET">
-        <div class="container">
-        <button> Login </button>
-        </div>
-      </form>
+     <form action='/login' method="GET">
+      <div class="container">
+        <button>Login</button>
+      </div>
+     </form>
 </body>
 </html>
